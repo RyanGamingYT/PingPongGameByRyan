@@ -1,9 +1,13 @@
 import pygame
 from pygame.locals import *
+import screeninfo
+
+# Get the primary monitor information
+screen_info = screeninfo.get_monitors()[0]
 
 # Initialize Pygame and set up the game window
 pygame.init()
-WIDTH, HEIGHT = 1366, 786
+WIDTH, HEIGHT = screen_info.width, screen_info.height
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Ping Pong Game")
 clock = pygame.time.Clock()
